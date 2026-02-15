@@ -1,65 +1,210 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import { FadeIn } from "@/components/FadeIn";
+import { destinations } from "@/lib/destinations";
+
+const pillars = [
+  {
+    title: "Personally Vetted",
+    description:
+      "Every destination on this site is one I've traveled to myself. I don't curate from a catalog — I go, I build relationships with local guides, and only then do I bring it to you.",
+  },
+  {
+    title: "Designed From Scratch",
+    description:
+      "There are no pre-packaged trips here. Every adventure starts with a conversation about what moves you — then we build it from the ground up with guides who know the terrain like their own backyard.",
+  },
+  {
+    title: "Community at the Core",
+    description:
+      "Tourism should leave a place better than it found it. We direct 5% of gross revenue to the communities that make these adventures possible, and we work exclusively with locally owned operations.",
+  },
+];
+
+const stats = [
+  { value: "100%", label: "locally owned guide partners" },
+  { value: "5%", label: "of revenue to community impact fund" },
+  { value: "0", label: "pre-packaged trips — every adventure is built from scratch" },
+];
+
+export default function HomePage() {
+  const featured = destinations.slice(0, 4);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <>
+      {/* Hero */}
+      <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
+        <div className={`absolute inset-0 bg-gradient-to-b from-navy via-slate/50 to-ink`} />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
+        <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+          <FadeIn delay={0.2}>
+            <span className="font-body text-[10px] font-normal tracking-[4px] uppercase text-copper">
+              Keel Ridge
+            </span>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <h1 className="mt-6 font-display text-4xl font-light leading-tight text-snow sm:text-5xl md:text-6xl lg:text-7xl">
+              Adventures designed by someone who&apos;s been there
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.6}>
+            <p className="mt-6 font-body text-base font-light text-sand/80 sm:text-lg md:text-xl">
+              Bespoke expeditions. Locally guided. Community driven.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.8}>
+            <Link
+              href="/design"
+              className="mt-10 inline-flex items-center gap-2 border border-copper/30 px-8 py-3.5 font-body text-[11px] font-normal tracking-[3px] uppercase text-copper transition-all hover:border-copper hover:bg-copper/10"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              Design My Adventure
+              <span className="text-sm">&rarr;</span>
+            </Link>
+          </FadeIn>
+        </div>
+        <div className="absolute bottom-12 left-1/2 -translate-x-1/2">
+          <div className="h-12 w-px bg-gradient-to-b from-transparent to-copper/30" />
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="bg-deep py-24 md:py-32">
+        <div className="mx-auto max-w-4xl px-6">
+          <FadeIn>
+            <blockquote className="text-center">
+              <p className="font-display text-xl font-light leading-relaxed text-cream/90 sm:text-2xl md:text-3xl">
+                &ldquo;The best adventures I&apos;ve ever had were never found in a
+                catalog. They started with a local who knew the mountain, a
+                fisherman who knew the tide, a guide who opened a door I
+                didn&apos;t know existed.&rdquo;
+              </p>
+              <footer className="mt-8">
+                <span className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper">
+                  &mdash; Whit Mead, Founder
+                </span>
+              </footer>
+            </blockquote>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Three Pillars */}
+      <section className="bg-ink py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
+            {pillars.map((pillar, i) => (
+              <FadeIn key={pillar.title} delay={i * 0.15}>
+                <div className="border-t border-copper/20 pt-8">
+                  <h3 className="font-display text-xl font-medium text-snow sm:text-2xl">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-4 font-body text-sm font-light leading-relaxed text-cream/70">
+                    {pillar.description}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Destinations Preview */}
+      <section className="bg-deep py-24 md:py-32">
+        <div className="mx-auto max-w-7xl px-6">
+          <FadeIn>
+            <span className="font-body text-[10px] font-normal tracking-[4px] uppercase text-copper">
+              Destinations
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-light text-snow sm:text-4xl">
+              Where We Go
+            </h2>
+          </FadeIn>
+          <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featured.map((dest, i) => (
+              <FadeIn key={dest.slug} delay={i * 0.1}>
+                <Link href={`/destinations/${dest.slug}`} className="group block">
+                  <div className="relative aspect-[3/4] overflow-hidden">
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-b ${dest.gradient} transition-transform duration-700 group-hover:scale-105`}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3 className="font-display text-lg font-medium text-snow">
+                        {dest.name}
+                      </h3>
+                      <p className="mt-1 font-body text-xs font-light text-sand/70">
+                        {dest.theme}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <div className="mt-12 text-center">
+              <Link
+                href="/destinations"
+                className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper transition-colors hover:text-rust"
+              >
+                View All Destinations &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Impact Teaser */}
+      <section className="bg-ink py-24 md:py-32">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
+            {stats.map((stat, i) => (
+              <FadeIn key={i} delay={i * 0.15}>
+                <div className="text-center">
+                  <span className="font-display text-4xl font-light text-copper sm:text-5xl">
+                    {stat.value}
+                  </span>
+                  <p className="mt-3 font-body text-sm font-light text-cream/60">
+                    {stat.label}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn>
+            <div className="mt-16 text-center">
+              <Link
+                href="/impact"
+                className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper transition-colors hover:text-rust"
+              >
+                Learn About Our Impact &rarr;
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="bg-deep py-24 md:py-32">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <FadeIn>
+            <p className="font-display text-2xl font-light leading-relaxed text-cream/90 sm:text-3xl md:text-4xl">
+              If you&apos;d rather earn the view than be driven to it, we should
+              talk.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <Link
+              href="/design"
+              className="mt-10 inline-flex items-center gap-2 border border-copper/30 px-8 py-3.5 font-body text-[11px] font-normal tracking-[3px] uppercase text-copper transition-all hover:border-copper hover:bg-copper/10"
             >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              Design My Adventure
+              <span className="text-sm">&rarr;</span>
+            </Link>
+          </FadeIn>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+    </>
   );
 }
