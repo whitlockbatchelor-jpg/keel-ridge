@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { destinations } from "@/lib/destinations";
 
@@ -43,8 +44,12 @@ export default function DestinationsPage() {
                   className="group block"
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-b ${dest.gradient} transition-transform duration-700 group-hover:scale-105`}
+                    <Image
+                      src={dest.image}
+                      alt={dest.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/20 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-8">

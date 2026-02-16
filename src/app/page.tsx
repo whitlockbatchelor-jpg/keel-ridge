@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { destinations } from "@/lib/destinations";
 
@@ -35,8 +36,16 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-b from-navy via-slate/50 to-ink`} />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent" />
+        <Image
+          src="/images/hero/homepage-hero.jpg"
+          alt="Keel Ridge — bespoke adventure travel"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-ink/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           <FadeIn delay={0.2}>
             <span className="font-body text-[10px] font-normal tracking-[4px] uppercase text-copper">
@@ -125,8 +134,12 @@ export default function HomePage() {
               <FadeIn key={dest.slug} delay={i * 0.1}>
                 <Link href={`/destinations/${dest.slug}`} className="group block">
                   <div className="relative aspect-[3/4] overflow-hidden">
-                    <div
-                      className={`absolute inset-0 bg-gradient-to-b ${dest.gradient} transition-transform duration-700 group-hover:scale-105`}
+                    <Image
+                      src={dest.image}
+                      alt={dest.name}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6">

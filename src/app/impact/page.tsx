@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -34,7 +35,16 @@ export default function ImpactPage() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden pb-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy via-slate/40 to-ink" />
+        <Image
+          src="/images/hero/impact.png"
+          alt="Community impact"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-ink/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/40 to-ink" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <FadeIn>
             <span className="font-body text-[10px] font-normal tracking-[4px] uppercase text-copper">

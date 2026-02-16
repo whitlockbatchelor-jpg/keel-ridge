@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 import { destinations } from "@/lib/destinations";
 
@@ -31,7 +32,15 @@ export default async function DestinationPage({ params }: Props) {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-end overflow-hidden pb-24">
-        <div className={`absolute inset-0 bg-gradient-to-b ${dest.gradient}`} />
+        <Image
+          src={dest.image}
+          alt={dest.name}
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-ink/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <FadeIn>
