@@ -77,6 +77,16 @@ function DesignForm() {
       budget:
         (form.elements.namedItem("budget") as HTMLSelectElement)?.value || "",
     };
+
+    // Send form data to email in the background (fire and forget)
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value || "";
+    const referral = (form.elements.namedItem("referral") as HTMLInputElement)?.value || "";
+    fetch("/api/submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...data, email, referral }),
+    }).catch(() => {});
+
     setFormData(data);
     setSubmitted(true);
     window.scrollTo({ top: 0, behavior: "smooth" });
