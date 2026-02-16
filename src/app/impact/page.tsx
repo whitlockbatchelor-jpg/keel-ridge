@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 const metrics = [
   {
     value: "100%",
-    label: "Locally Owned Partners",
+    label: "Local-First Partnerships",
     description:
-      "Every guide, lodge, and outfitter we work with is locally owned and operated. No multinational chains. No distant corporate offices.",
+      "We seek out guides, lodges, and outfitters who are locally owned and operated, and prioritize local staff at every level of the experience.",
   },
   {
     value: "5%",
@@ -61,7 +61,7 @@ export default function ImpactPage() {
                 fraction. The village that hosts you sees even less.
               </p>
               <p>
-                Keel Ridge was built to work differently. We partner exclusively
+                Keel Ridge was built to work differently. We prioritize partnerships
                 with locally owned operations — guides, lodges, outfitters, and
                 transport providers who live in the communities where we travel.
                 There are no middlemen. No aggregator platforms. No white-label

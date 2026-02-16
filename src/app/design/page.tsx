@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
+import { AdventureChat } from "@/components/AdventureChat";
 import { destinations } from "@/lib/destinations";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
@@ -11,6 +12,8 @@ const adventureTypes = [
   "Sailing",
   "Mountaineering",
   "Trekking",
+  "Kayaking/Canoeing",
+  "Mountain Biking",
   "Cultural Exploration",
   "Multi-Sport",
   "Other",
@@ -24,11 +27,23 @@ const budgetRanges = [
   "Flexible",
 ];
 
+interface FormData {
+  name: string;
+  adventureTypes: string;
+  destination: string;
+  timing: string;
+  group: string;
+  experience: string;
+  priorities: string;
+  budget: string;
+}
+
 function DesignForm() {
   const searchParams = useSearchParams();
   const preselectedDest = searchParams.get("destination") || "";
 
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState<FormData | null>(null);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
   const toggleType = (type: string) => {
@@ -37,22 +52,63 @@ function DesignForm() {
     );
   };
 
-  if (submitted) {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const data: FormData = {
+      name: (form.elements.namedItem("name") as HTMLInputElement)?.value || "",
+      adventureTypes: selectedTypes.join(", "),
+      destination:
+        (form.elements.namedItem("destination_interest") as HTMLInputElement)
+          ?.value || "",
+      timing:
+        (form.elements.namedItem("timing") as HTMLInputElement)?.value || "",
+      group:
+        (form.elements.namedItem("group") as HTMLInputElement)?.value || "",
+      experience:
+        (
+          form.querySelector(
+            'input[name="experience"]:checked'
+          ) as HTMLInputElement
+        )?.value || "",
+      priorities:
+        (form.elements.namedItem("priorities") as HTMLTextAreaElement)?.value ||
+        "",
+      budget:
+        (form.elements.namedItem("budget") as HTMLSelectElement)?.value || "",
+    };
+    setFormData(data);
+    setSubmitted(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  if (submitted && formData) {
     return (
-      <section className="flex min-h-screen items-center justify-center bg-ink">
-        <div className="mx-auto max-w-2xl px-6 text-center">
-          <FadeIn>
-            <span className="font-display text-5xl text-copper">&check;</span>
-            <h2 className="mt-6 font-display text-3xl font-light text-snow sm:text-4xl">
-              We&apos;ll be in touch within 48 hours to start designing your
-              adventure.
-            </h2>
-            <p className="mt-4 font-body text-sm font-light text-cream/60">
-              In the meantime, feel free to explore our destinations.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
+      <>
+        {/* Chat Hero */}
+        <section className="relative flex min-h-[40vh] items-end overflow-hidden pb-16">
+          <div className="absolute inset-0 bg-gradient-to-b from-navy via-slate/40 to-ink" />
+          <div className="relative z-10 mx-auto max-w-4xl px-6">
+            <FadeIn>
+              <span className="font-body text-[10px] font-normal tracking-[4px] uppercase text-copper">
+                Adventure Design
+              </span>
+              <h1 className="mt-4 font-display text-3xl font-light text-snow sm:text-4xl md:text-5xl">
+                Let&apos;s shape your adventure, {formData.name.split(" ")[0]}.
+              </h1>
+            </FadeIn>
+          </div>
+        </section>
+
+        {/* Chat Interface */}
+        <section className="bg-ink py-16 md:py-24">
+          <div className="mx-auto max-w-2xl px-6">
+            <FadeIn>
+              <AdventureChat formData={formData} />
+            </FadeIn>
+          </div>
+        </section>
+      </>
     );
   }
 
@@ -81,15 +137,7 @@ function DesignForm() {
       {/* Form */}
       <section className="bg-ink py-16 md:py-24">
         <div className="mx-auto max-w-2xl px-6">
-          <form
-            action="https://formspree.io/f/xplaceholder"
-            method="POST"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSubmitted(true);
-            }}
-            className="space-y-10"
-          >
+          <form onSubmit={handleSubmit} className="space-y-10">
             {/* Hidden fields for multi-select */}
             <input
               type="hidden"
@@ -214,10 +262,7 @@ function DesignForm() {
                 <div className="mt-4 flex flex-wrap gap-3">
                   {["Beginner", "Intermediate", "Advanced", "Expert"].map(
                     (level) => (
-                      <label
-                        key={level}
-                        className="cursor-pointer"
-                      >
+                      <label key={level} className="cursor-pointer">
                         <input
                           type="radio"
                           name="experience"

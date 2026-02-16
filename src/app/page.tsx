@@ -6,14 +6,14 @@ import { destinations } from "@/lib/destinations";
 
 const pillars = [
   {
-    title: "Personally Vetted",
+    title: "Personally Connected",
     description:
-      "Every destination on this site is one I've traveled to myself. I don't curate from a catalog — I go, I build relationships with local guides, and only then do I bring it to you.",
+      "Every guide we work with is someone we've built a real relationship with — on the ground, in the mountains, on the water. We invest in the people and places first, because the best adventures come from trust, not transactions.",
   },
   {
     title: "Designed From Scratch",
     description:
-      "There are no pre-packaged trips here. Every adventure starts with a conversation about what moves you — then we build it from the ground up with guides who know the terrain like their own backyard.",
+      "There are no pre-packaged trips here. Every adventure starts with you — your experience level, your ambitions, the moments you're chasing. Then we design something that's never existed before.",
   },
   {
     title: "Community at the Core",
@@ -45,7 +45,7 @@ export default function HomePage() {
           </FadeIn>
           <FadeIn delay={0.4}>
             <h1 className="mt-6 font-display text-4xl font-light leading-tight text-snow sm:text-5xl md:text-6xl lg:text-7xl">
-              Adventures designed by someone who&apos;s been there
+              Wild places and remote communities deserve more than visitors. They deserve advocates. We design adventures that honor both.
             </h1>
           </FadeIn>
           <FadeIn delay={0.6}>
@@ -76,12 +76,12 @@ export default function HomePage() {
               <p className="font-display text-xl font-light leading-relaxed text-cream/90 sm:text-2xl md:text-3xl">
                 &ldquo;The best adventures I&apos;ve ever had were never found in a
                 catalog. They started with a local who knew the mountain, a
-                fisherman who knew the tide, a guide who opened a door I
+                sailor who knew the tide, a guide who opened a door I
                 didn&apos;t know existed.&rdquo;
               </p>
               <footer className="mt-8">
                 <span className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper">
-                  &mdash; Whit Mead, Founder
+                  &mdash; Whit Batchelor, Founder
                 </span>
               </footer>
             </blockquote>

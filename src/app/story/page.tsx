@@ -47,8 +47,8 @@ export default function StoryPage() {
               </p>
               <p>
                 At the University of Vermont I studied forestry and
-                sustainability, then moved to San Diego to coach sailing at J
-                World and race 49ers at the Olympic level. Professional big-boat
+                sustainability, then moved to San Diego to coach sailing and
+                race Olympic dinghys. Professional big-boat
                 racing took me through the Caribbean, across Europe, and from
                 Hong Kong to mainland China. Eventually an MBA and fifteen years
                 in wealth management gave me a career I&apos;m proud of — but the
@@ -64,10 +64,10 @@ export default function StoryPage() {
               </p>
               <p>
                 Keel Ridge exists because I kept building these trips for myself
-                and realized they shouldn&apos;t just be mine. Every destination
-                on this site is one I&apos;ve been to. Every guide is someone I
-                trust with my own safety. And every adventure is designed from
-                scratch — because the best ones always are.
+                and realized they shouldn&apos;t just be mine. Every guide is
+                someone we&apos;ve built a real relationship with. And every
+                adventure is designed from scratch — because the best ones
+                always are.
               </p>
             </div>
           </FadeIn>
@@ -76,7 +76,7 @@ export default function StoryPage() {
           <FadeIn delay={0.2}>
             <div className="mt-12 border-t border-copper/20 pt-8">
               <span className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper">
-                — Whit Mead, Founder
+                — Whit Batchelor, Founder
               </span>
             </div>
           </FadeIn>
@@ -95,10 +95,10 @@ export default function StoryPage() {
             {[
               { year: "Vermont", text: "Raised between ski mountains and boatyards" },
               { year: "UVM", text: "Forestry, sustainability, and the seed of a philosophy" },
-              { year: "San Diego", text: "Olympic-level sailing, coaching at J World" },
+              { year: "San Diego", text: "Olympic-level sailing and coaching dinghys" },
               { year: "The World", text: "Professional racing — Caribbean, Europe, Asia" },
               { year: "Wall Street", text: "MBA, wealth management, fifteen years of discipline" },
-              { year: "Backcountry", text: "BC, Alaska, Japan, New Zealand, the Alps — building the trips" },
+              { year: "Backcountry", text: "Alaska, Japan, New Zealand, the Alps — building the trips" },
               { year: "Keel Ridge", text: "Opening those trips to others. Bespoke adventure, from the ground up." },
             ].map((item, i) => (
               <FadeIn key={item.year} delay={i * 0.08}>
