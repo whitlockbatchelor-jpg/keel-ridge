@@ -30,7 +30,7 @@ const stats = [
 ];
 
 export default function HomePage() {
-  const featured = destinations.slice(0, 4);
+  const featured = destinations.slice(0, 8);
 
   return (
     <>

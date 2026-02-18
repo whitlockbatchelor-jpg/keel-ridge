@@ -115,4 +115,19 @@ export const destinations: Destination[] = [
     guideIntro:
       "Born on São Miguel, our Azorean guide is a competitive mountain biker and offshore sailor who knows every trail and every passage in the archipelago.",
   },
+  {
+    slug: "south-georgia",
+    name: "South Georgia",
+    region: "Sub-Antarctic",
+    theme: "Sailing and ski mountaineering on the most remote island on earth",
+    gradient: "from-[#0B1520] via-[#152030] to-ink",
+    image: "/images/destinations/south-georgia-hero.jpg",
+    description: [
+      "South Georgia is a sub-Antarctic island 800 miles southeast of the Falklands — no airstrip, no permanent population, accessible only by expedition yacht. It's where Shackleton made his legendary crossing in 1916 and where the largest king penguin colonies on earth crowd the beaches beneath glaciated peaks that rise straight from the Southern Ocean. This is one of the last places on the planet where wildlife outnumbers visitors by orders of magnitude.",
+      "The mountains here are remote, unclimbed, and volatile — true expedition mountaineering at its purest, with the yacht as mobile base camp. You sail between anchorages in fjords that don't appear on most charts, skin up glaciers under skies that shift from bluebird to whiteout in minutes, and ski lines that may never have been touched by another human being. The approach itself is part of the adventure: a four-day ocean passage from the Falklands across some of the most powerful seas on earth.",
+      "This is not a trip for spectators. It requires solid mountaineering fitness, comfort with genuine remoteness, and the kind of expedition mindset that thrives on uncertainty. But for those who are ready, South Georgia delivers something no other place on earth can — the intersection of extreme alpine terrain, extraordinary wildlife, and the raw, unfiltered silence of the last wilderness.",
+    ],
+    guideIntro:
+      "Skip Novak has spent decades sailing and climbing in the high latitudes. Through Pelagic Expeditions, he has pioneered expedition yacht-based mountaineering in the sub-Antarctic, and his knowledge of South Georgia's coastline, glaciers, and weather is unmatched.",
+  },
 ];
