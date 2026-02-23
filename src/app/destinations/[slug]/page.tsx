@@ -33,7 +33,7 @@ export default async function DestinationPage({ params }: Props) {
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-end overflow-hidden pb-24">
         <Image
-          src={dest.image}
+          src={dest.heroImage || dest.image}
           alt={dest.name}
           fill
           priority

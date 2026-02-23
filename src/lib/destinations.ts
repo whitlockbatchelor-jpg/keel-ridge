@@ -5,6 +5,7 @@ export interface Destination {
   theme: string;
   gradient: string;
   image: string;
+  heroImage?: string;
   description: string[];
   guideIntro: string;
 }
@@ -122,6 +123,7 @@ export const destinations: Destination[] = [
     theme: "Sailing and ski mountaineering on the most remote island on earth",
     gradient: "from-[#0B1520] via-[#152030] to-ink",
     image: "/images/destinations/south-georgia-hero.jpg",
+    heroImage: "/images/destinations/south-georgia-ski.jpg",
     description: [
       "South Georgia is a sub-Antarctic island 800 miles southeast of the Falklands — no airstrip, no permanent population, accessible only by expedition yacht. It's where Shackleton made his legendary crossing in 1916 and where the largest king penguin colonies on earth crowd the beaches beneath glaciated peaks that rise straight from the Southern Ocean. This is one of the last places on the planet where wildlife outnumbers visitors by orders of magnitude.",
       "The mountains here are remote, unclimbed, and volatile — true expedition mountaineering at its purest, with the yacht as mobile base camp. You sail between anchorages in fjords that don't appear on most charts, skin up glaciers under skies that shift from bluebird to whiteout in minutes, and ski lines that may never have been touched by another human being. The approach itself is part of the adventure: a four-day ocean passage from the Falklands across some of the most powerful seas on earth.",
