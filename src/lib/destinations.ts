@@ -1,3 +1,8 @@
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
 export interface Destination {
   slug: string;
   name: string;
@@ -6,6 +11,7 @@ export interface Destination {
   gradient: string;
   image: string;
   heroImage?: string;
+  gallery?: GalleryImage[];
   description: string[];
   guideIntro: string;
 }
@@ -18,6 +24,14 @@ export const destinations: Destination[] = [
     theme: "Deep powder skiing through ancient cedar forests and hidden mountain villages",
     gradient: "from-slate via-navy to-ink",
     image: "/images/destinations/japanese-alps-hero.jpg",
+    heroImage: "/images/destinations/japan/bootpack-lone-tree-whiteout.jpg",
+    gallery: [
+      { src: "/images/destinations/japanese-alps-hero.jpg", alt: "Tree skiing through deep powder in the Japanese Alps" },
+      { src: "/images/destinations/japan/bootpack-lone-tree-whiteout.jpg", alt: "Bootpacking through whiteout with a lone tree" },
+      { src: "/images/destinations/japan/powder-turn-trees.jpg", alt: "Powder turns through Japanese cedar forest" },
+      { src: "/images/destinations/japan/skin-track-snow-forest-shadows.jpg", alt: "Skin track through snow-covered forest" },
+      { src: "/images/destinations/japan/village-street-night-snow.jpg", alt: "Snow-covered village street at night" },
+    ],
     description: [
       "The Japanese Alps are where the world's deepest snowpack meets an almost spiritual silence. Ancient cedar forests stand sentinel over valleys where hidden villages have weathered centuries of winter, their thatched roofs bowing under meters of powder that falls with a consistency found almost nowhere else on earth. This isn't resort skiing — it's a slow, deliberate immersion into terrain that demands respect and rewards patience.",
       "Our routes thread through volcanic highlands and remote ranges, guided by locals who've skied these mountains since childhood. Between runs, the rhythm shifts: wood-fired onsen tucked into mountainsides, izakaya dinners of fresh-caught seafood, mornings that start with matcha and end with waist-deep turns through untracked glades beneath thousand-year-old trees.",
@@ -78,6 +92,15 @@ export const destinations: Destination[] = [
     theme: "Heli-ski mountaineering in pristine alpine terrain",
     gradient: "from-[#1A2535] via-navy to-ink",
     image: "/images/destinations/new-zealand-hero.jpg",
+    heroImage: "/images/destinations/new-zealand/heli-pickup-snow-spray.jpg",
+    gallery: [
+      { src: "/images/destinations/new-zealand-hero.jpg", alt: "Turquoise alpine lake at sunset from the air" },
+      { src: "/images/destinations/new-zealand/heli-pickup-snow-spray.jpg", alt: "Helicopter pickup on steep snow with spray" },
+      { src: "/images/destinations/new-zealand/alpine-lake-mt-cook-aerial.jpg", alt: "Glacial lake with Mt Cook from the air" },
+      { src: "/images/destinations/new-zealand/two-skiers-summit-southern-alps.jpg", alt: "Two skiers on summit with Southern Alps backdrop" },
+      { src: "/images/destinations/new-zealand/lodge-bed-mountain-view.jpg", alt: "Lodge at blue hour with mountain views" },
+      { src: "/images/destinations/new-zealand/lodge-picnic-table-mountains.jpg", alt: "Lodge dining with mountain panorama" },
+    ],
     description: [
       "New Zealand's Southern Alps are a mountaineer's proving ground — raw, glaciated, and staggeringly beautiful. The ski mountaineering here combines helicopter access with serious alpine terrain: couloirs that drop from ridgeline to valley floor, glaciers that require roped travel, and descents measured in thousands of vertical feet.",
       "What sets New Zealand apart is the scale and the emptiness. On a given day, your tracks may be the only ones on the entire mountain. The weather is maritime and demanding, the snowpack complex, and the reward immense — long, sustained descents through terrain that feels truly wild.",
@@ -93,6 +116,14 @@ export const destinations: Destination[] = [
     theme: "Whale watching, sea kayaking, and mountain biking from the Sea of Cortez to the Pacific",
     gradient: "from-[#1A2520] via-[#1B2A3A] to-ink",
     image: "/images/destinations/baja-hero.jpg",
+    heroImage: "/images/destinations/baja/panga-boat-rocky-coast.jpg",
+    gallery: [
+      { src: "/images/destinations/baja-hero.jpg", alt: "Infinity pool with tipi and canoe at dusk" },
+      { src: "/images/destinations/baja/panga-boat-rocky-coast.jpg", alt: "Panga boat approaching rocky headland" },
+      { src: "/images/destinations/baja/resort-pool-sunset-wide.jpg", alt: "Resort pool with ocean sunset" },
+      { src: "/images/destinations/baja/snorkel-boat-clear-water.jpg", alt: "Snorkel boat in crystal clear water" },
+      { src: "/images/destinations/baja/pool-tipi-sunset-wide.jpg", alt: "Pool and tipi at golden hour" },
+    ],
     description: [
       "The Baja Peninsula is a thousand-mile ribbon of desert, mountain, and coastline wedged between two of the world's most productive seas. The Sea of Cortez — what Cousteau called the world's aquarium — teems with whale sharks, mobula rays, and sea lions. On the Pacific side, gray whales migrate into the warm lagoons each winter to calve and nurse, close enough to touch from a kayak.",
       "Between the coasts, the Sierra de la Laguna rises from the desert floor — a sky island of oak and pine that offers some of the most underrated mountain biking terrain in North America. The trails here are raw, the vistas endless, and the descents earn every pedal stroke of the climb.",

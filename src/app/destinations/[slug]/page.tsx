@@ -87,7 +87,7 @@ export default async function DestinationPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Photo Gallery Placeholder */}
+      {/* Photo Gallery */}
       <section className="bg-ink py-24 md:py-32">
         <div className="mx-auto max-w-7xl px-6">
           <FadeIn>
@@ -96,11 +96,27 @@ export default async function DestinationPage({ params }: Props) {
             </span>
           </FadeIn>
           <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-3">
-            {[...Array(6)].map((_, i) => (
-              <FadeIn key={i} delay={i * 0.08}>
-                <div className="aspect-[4/3] bg-gradient-to-br from-slate/50 to-navy/30" />
-              </FadeIn>
-            ))}
+            {dest.gallery ? (
+              dest.gallery.map((img, i) => (
+                <FadeIn key={i} delay={i * 0.08}>
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      className="object-cover transition-transform duration-700 hover:scale-105"
+                      sizes="(max-width: 768px) 50vw, 33vw"
+                    />
+                  </div>
+                </FadeIn>
+              ))
+            ) : (
+              [...Array(6)].map((_, i) => (
+                <FadeIn key={i} delay={i * 0.08}>
+                  <div className="aspect-[4/3] bg-gradient-to-br from-slate/50 to-navy/30" />
+                </FadeIn>
+              ))
+            )}
           </div>
         </div>
       </section>

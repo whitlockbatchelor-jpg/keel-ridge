@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -13,7 +14,16 @@ export default function StoryPage() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-end overflow-hidden pb-24">
-        <div className="absolute inset-0 bg-gradient-to-b from-navy via-slate/40 to-ink" />
+        <Image
+          src="/images/destinations/story/descending-snowfield-silhouette.jpg"
+          alt="Descending a vast snowfield — the solitude that drives us"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-ink/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl px-6">
           <FadeIn>
             <span className="font-body text-[10px] font-normal tracking-[4px] uppercase text-copper">
@@ -78,6 +88,23 @@ export default function StoryPage() {
               <span className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper">
                 — Whit Batchelor, Founder
               </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Photo Break */}
+      <section className="bg-deep">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <FadeIn>
+            <div className="relative aspect-[21/9] overflow-hidden">
+              <Image
+                src="/images/destinations/story/skinning-up-two-skiers.jpg"
+                alt="Two skiers skinning up side by side"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1280px) 100vw, 1280px"
+              />
             </div>
           </FadeIn>
         </div>
