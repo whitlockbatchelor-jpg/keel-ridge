@@ -42,43 +42,115 @@ export default function StoryPage() {
           <FadeIn>
             <div className="space-y-6 font-body text-base font-light leading-[1.85] text-cream/80">
               <p>
-                I grew up in the mountains of Vermont, where my father was a ski
-                patroller, boat builder, and sailmaker. Winters were spent on the
-                mountain. Summers belonged to my mother — running sailing schools
-                along the Connecticut coast, where week-long cruises through
-                Fisher&apos;s Island, Block Island, Cuttyhunk, and the Elizabeth
-                Islands taught me that the best adventures aren&apos;t planned in
-                boardrooms. They&apos;re built by people who know the water, the
-                weather, and the way home.
+                I grew up between two people who had made different bets on the
+                same idea — that the best life is lived outdoors, in motion, in
+                places that demand something from you.
               </p>
               <p>
-                That instinct — trust the local, follow the person who actually
-                knows — has guided everything since.
+                My father was a ski patroller, a boat builder, a sailmaker in
+                Vermont. My mother ran sailing schools along the Connecticut
+                coast. Week-long cruises through Fisher&apos;s Island, Block
+                Island, the Elizabeth Islands. What I learned from her, early
+                and without being told directly, was that the people who
+                actually know a place are not the ones who visit it. They are
+                the ones who live there, work it, understand its moods. Every
+                guide I&apos;ve trusted since has confirmed this.
               </p>
               <p>
-                At the University of Vermont I studied forestry and
-                sustainability, then moved to San Diego to coach sailing and
-                race Olympic dinghys. Professional big-boat
-                racing took me through the Caribbean, across Europe, and from
-                Hong Kong to mainland China. Eventually an MBA and fifteen years
-                in wealth management gave me a career I&apos;m proud of — but the
-                mountains and the sea never stopped calling.
+                I don&apos;t know exactly when I understood that this would
+                define me. Probably I never made the decision consciously. Some
+                things aren&apos;t decisions.
               </p>
               <p>
-                Today I ski the backcountry of British Columbia, Alaska, Japan,
-                New Zealand, and the European Alps. I sail remote coastlines. I
-                build relationships with guides in places most travel companies
-                have never heard of. And I&apos;m planning an expedition to
-                Chile&apos;s Cordillera Darwin — one of the last truly wild
-                places on earth.
+                At UVM I studied forestry and sustainability. Then San Diego.
+                Olympic dinghy sailing, which is a sport that will humble you
+                efficiently and without apology. Then professional big-boat
+                racing — the Caribbean, Europe, Hong Kong to mainland China. An
+                MBA. Fifteen years in wealth management. A life I&apos;m
+                genuinely proud of, and a pull toward the mountains and the sea
+                that never quieted regardless of what else I was doing.
               </p>
               <p>
-                Keel Ridge exists because I kept building these trips for myself
-                and realized they shouldn&apos;t just be mine. Every guide is
-                someone we&apos;ve built a real relationship with. And every
-                adventure is designed from scratch — because the best ones
-                always are.
+                I&apos;m in my mid-forties now. I pay attention to things I
+                didn&apos;t used to pay attention to. My body. Time. The rate
+                at which certain things are disappearing.
               </p>
+              <p>
+                Glaciers are retreating. I&apos;ve seen this. Villages that
+                were remote ten years ago now have Instagram accounts. The
+                guides who know the old routes are aging. Their knowledge
+                doesn&apos;t transfer automatically — it requires someone to go
+                there, to ask, to follow them into terrain that hasn&apos;t
+                been packaged yet. The windows are closing. Not dramatically,
+                not all at once. But closing.
+              </p>
+              <p>This is not melodrama. It&apos;s arithmetic.</p>
+              <p>
+                For the past five or six years I&apos;ve done most of these
+                trips alone.
+              </p>
+              <p>
+                Not because I prefer solitude — I don&apos;t, particularly —
+                but because the people I know well have, for the most part,
+                stopped saying yes. Careers. Kids. The accumulating weight of
+                a comfortable life. I understand it. I&apos;ve felt the pull
+                myself.
+              </p>
+              <p>
+                So I show up solo. A lodge in Alaska. A guided group in Japan.
+                Skinning into the Alps with people I&apos;ve never met. And
+                what I keep finding — consistently, in every one of these
+                places — is that I&apos;m not alone in being alone. The lodges
+                and base camps are full of people exactly like me.
+                Accomplished. Serious about this. Financially capable of being
+                here. But without a group. Not because they lack friends, but
+                because their friends have stopped saying yes.
+              </p>
+              <p>
+                They build extraordinary camaraderie for a week. Then they
+                scatter back to their lives. Back to scrolling at midnight,
+                half-planning trips that never quite come together.
+              </p>
+              <p>
+                I&apos;ve done this enough times to recognize it as a problem
+                worth solving.
+              </p>
+              <p>
+                Keel Ridge is not a travel company. I want to be clear about
+                that because the distinction matters.
+              </p>
+              <p>
+                It is an attempt to build a small, permanent community of
+                people who are serious about this — about the mountains, about
+                wild places, about going now while going is still possible.
+                People who understand that the point isn&apos;t the destination
+                on the map but the guide who has lived there for thirty years,
+                the descent that exists in no brochure, the week that changes
+                something in you that a resort vacation cannot touch.
+              </p>
+              <p>
+                I ski the backcountry of British Columbia, Alaska, Japan, New
+                Zealand, the European Alps. I sail remote coastlines. I build
+                relationships with guides in places most operators have never
+                heard of. I&apos;m planning an expedition to Chile&apos;s
+                Cordillera Darwin — one of the genuinely last wild places on
+                earth, accessible only by sea, demanding in ways that clarify
+                things.
+              </p>
+              <p>
+                I participate in every trip. I am not a tour operator. I am
+                the person who figured out how to make this happen and
+                decided, after enough solo lodge dinners with strangers who
+                turned out to be exactly the right people, that it
+                shouldn&apos;t just be mine.
+              </p>
+              <p>
+                If you&apos;ve read this far and recognized yourself in it —
+                the midnight scrolling, the trips that almost happened, the
+                friends who stopped saying yes — then you already know whether
+                this is for you.
+              </p>
+              <p>I&apos;d like to talk.</p>
             </div>
           </FadeIn>
 
@@ -153,10 +225,10 @@ export default function StoryPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link
-              href="/design"
+              href="/journal"
               className="mt-10 inline-flex items-center gap-2 border border-copper/30 px-8 py-3.5 font-body text-[11px] font-normal tracking-[3px] uppercase text-copper transition-all hover:border-copper hover:bg-copper/10"
             >
-              Design My Adventure
+              Read the Journal
               <span className="text-sm">&rarr;</span>
             </Link>
           </FadeIn>
