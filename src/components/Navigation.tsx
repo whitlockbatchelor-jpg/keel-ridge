@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "/story", label: "Story" },
+  { href: "/journal", label: "Journal" },
   { href: "/destinations", label: "Destinations" },
   { href: "/impact", label: "Impact" },
 ];
@@ -53,12 +54,6 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/design"
-            className="font-body text-[11px] font-light tracking-[3px] uppercase text-copper transition-colors hover:text-rust"
-          >
-            Design My Adventure
-          </Link>
         </div>
 
         {/* Mobile hamburger */}
@@ -102,13 +97,6 @@ export function Navigation() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/design"
-            onClick={() => setIsOpen(false)}
-            className="font-display text-2xl font-light tracking-[4px] uppercase text-copper transition-colors hover:text-rust"
-          >
-            Design My Adventure
-          </Link>
         </div>
       </div>
     </header>
