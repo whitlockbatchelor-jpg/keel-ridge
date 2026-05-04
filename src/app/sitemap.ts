@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { destinations } from "@/lib/destinations";
+import { getAllJournalPosts } from "@/lib/journal";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://keelridge.co";
@@ -19,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...destinationPages];
+  const journalPages = getAllJournalPosts().map((post) => ({
+    url: `${base}/journal/${post.slug}`,
+    lastModified: new Date(post.frontmatter.date),
+    priority: 0.6,
+  }));
+
+  return [...staticPages, ...destinationPages, ...journalPages];
 }

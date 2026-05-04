@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
+import { formatJournalDate, getAllJournalPosts } from "@/lib/journal";
 
 export const metadata: Metadata = {
   title: "Journal",
@@ -8,31 +10,9 @@ export const metadata: Metadata = {
     "Expedition reports, destination stories, and field notes from Keel Ridge adventures around the world.",
 };
 
-const placeholderPosts = [
-  {
-    slug: "first-descent-cordillera",
-    title: "Planning a First Descent in the Cordillera Darwin",
-    date: "Coming Soon",
-    excerpt:
-      "What it takes to plan an expedition to one of the last truly wild mountain ranges on earth — from the boat to the glacier to the line.",
-  },
-  {
-    slug: "powder-and-patience-hokkaido",
-    title: "Powder and Patience in Hokkaido",
-    date: "Coming Soon",
-    excerpt:
-      "Lessons from a week in Japan's backcountry — where the snow is deep, the silence is total, and the rhythm of the mountain teaches you to slow down.",
-  },
-  {
-    slug: "towers-of-svaneti",
-    title: "The Towers of Svaneti",
-    date: "Coming Soon",
-    excerpt:
-      "Walking through medieval tower villages in the Georgian Caucasus — a place where five thousand years of continuous habitation meets some of Europe's wildest terrain.",
-  },
-];
-
 export default function JournalPage() {
+  const posts = getAllJournalPosts();
+
   return (
     <>
       {/* Hero */}
@@ -57,29 +37,49 @@ export default function JournalPage() {
       {/* Posts Grid */}
       <section className="bg-ink py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {placeholderPosts.map((post, i) => (
-              <FadeIn key={post.slug} delay={i * 0.1}>
-                <Link
-                  href={`/journal/${post.slug}`}
-                  className="group block border border-white/5 bg-deep p-6 transition-colors hover:border-copper/20"
-                >
-                  <div className="aspect-[16/10] bg-gradient-to-br from-slate/30 to-navy/20 transition-transform duration-500 group-hover:scale-[1.02]" />
-                  <div className="mt-6">
-                    <span className="font-body text-[10px] font-light tracking-[2px] uppercase text-copper/70">
-                      {post.date}
-                    </span>
-                    <h2 className="mt-2 font-display text-lg font-medium text-snow">
-                      {post.title}
-                    </h2>
-                    <p className="mt-3 font-body text-sm font-light leading-relaxed text-cream/50">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                </Link>
-              </FadeIn>
-            ))}
-          </div>
+          {posts.length === 0 ? (
+            <FadeIn>
+              <div className="border border-white/5 bg-deep p-12 text-center">
+                <p className="font-body text-sm font-light text-cream/50">
+                  New entries are being written. Check back soon.
+                </p>
+              </div>
+            </FadeIn>
+          ) : (
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post, i) => (
+                <FadeIn key={post.slug} delay={i * 0.1}>
+                  <Link
+                    href={`/journal/${post.slug}`}
+                    className="group block border border-white/5 bg-deep p-6 transition-colors hover:border-copper/20"
+                  >
+                    <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-slate/30 to-navy/20">
+                      {post.frontmatter.hero && (
+                        <Image
+                          src={post.frontmatter.hero}
+                          alt={post.frontmatter.heroAlt ?? post.frontmatter.title}
+                          fill
+                          sizes="(min-width: 1024px) 320px, (min-width: 768px) 45vw, 90vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                        />
+                      )}
+                    </div>
+                    <div className="mt-6">
+                      <span className="font-body text-[10px] font-light tracking-[2px] uppercase text-copper/70">
+                        {formatJournalDate(post.frontmatter.date)} · {post.frontmatter.location}
+                      </span>
+                      <h2 className="mt-2 font-display text-lg font-medium text-snow">
+                        {post.frontmatter.title}
+                      </h2>
+                      <p className="mt-3 font-body text-sm font-light leading-relaxed text-cream/50">
+                        {post.frontmatter.excerpt}
+                      </p>
+                    </div>
+                  </Link>
+                </FadeIn>
+              ))}
+            </div>
+          )}
         </div>
       </section>
     </>
