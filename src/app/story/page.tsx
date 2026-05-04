@@ -15,8 +15,8 @@ export default function StoryPage() {
       {/* Hero */}
       <section className="relative flex min-h-[70vh] items-end overflow-hidden pb-24">
         <Image
-          src="/images/destinations/story/descending-snowfield-silhouette.jpg"
-          alt="Descending a vast snowfield — the solitude that drives us"
+          src="/images/story/story-hero.jpg"
+          alt="Four skiers skinning up through a storm in Japan, a lone twisted tree beside them"
           fill
           priority
           className="object-cover"
@@ -171,8 +171,8 @@ export default function StoryPage() {
           <FadeIn>
             <div className="relative aspect-[21/9] overflow-hidden">
               <Image
-                src="/images/destinations/story/skinning-up-two-skiers.jpg"
-                alt="Two skiers skinning up side by side"
+                src="/images/story/story-photobreak.jpg"
+                alt="Two figures on a remote track outside Queenstown, the Southern Alps ahead"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1280px) 100vw, 1280px"
