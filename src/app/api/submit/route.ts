@@ -32,7 +32,7 @@ ${data.priorities || "Not specified"}
 Referral: ${data.referral || "Not specified"}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Submitted from keelridge.co/design
+Submitted from keelridge.co
   `.trim();
 
   try {

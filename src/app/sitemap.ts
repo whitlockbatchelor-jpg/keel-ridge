@@ -10,7 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/story`, lastModified: new Date(), priority: 0.8 },
     { url: `${base}/destinations`, lastModified: new Date(), priority: 0.9 },
     { url: `${base}/impact`, lastModified: new Date(), priority: 0.7 },
-    { url: `${base}/design`, lastModified: new Date(), priority: 0.9 },
     { url: `${base}/journal`, lastModified: new Date(), priority: 0.6 },
   ];
 

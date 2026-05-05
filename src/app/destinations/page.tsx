@@ -7,7 +7,7 @@ import { destinations } from "@/lib/destinations";
 export const metadata: Metadata = {
   title: "Destinations",
   description:
-    "Personally vetted destinations from the mountains to the sea — Hokkaido, Georgia, New Zealand, Patagonia, and British Columbia.",
+    "Where we go — Japanese Alps, European Alps, New Zealand, Alaska, British Columbia, Baja, and Cordillera Darwin.",
 };
 
 export default function DestinationsPage() {
@@ -25,9 +25,11 @@ export default function DestinationsPage() {
               Where We Go
             </h1>
             <p className="mt-4 max-w-xl font-body text-base font-light text-sand/70">
-              Every destination below is one I&apos;ve traveled to myself. These
-              aren&apos;t pins on a marketing map — they&apos;re places I know,
-              with guides I trust.
+              Every destination here is one I&apos;ve been to. Not researched.
+              Not curated from a list. Been to, skied, sailed, dived, or
+              climbed — with guides who were born knowing the terrain. Some of
+              these places are changing. A few are disappearing. All of them
+              are worth going to now rather than later.
             </p>
           </FadeIn>
         </div>
@@ -81,10 +83,10 @@ export default function DestinationsPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link
-              href="/design"
+              href="/story"
               className="mt-10 inline-flex items-center gap-2 border border-copper/30 px-8 py-3.5 font-body text-[11px] font-normal tracking-[3px] uppercase text-copper transition-all hover:border-copper hover:bg-copper/10"
             >
-              Design My Adventure
+              Read the Story
               <span className="text-sm">&rarr;</span>
             </Link>
           </FadeIn>

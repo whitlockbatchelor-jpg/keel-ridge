@@ -126,15 +126,17 @@ export default async function DestinationPage({ params }: Props) {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <FadeIn>
             <p className="font-display text-2xl font-light leading-relaxed text-cream/90 sm:text-3xl">
-              Ready to experience {dest.name}?
+              The guides are there. The terrain is real. If you want to
+              understand what we&apos;re building and why, start with the
+              Story.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link
-              href={`/design?destination=${dest.slug}`}
+              href="/story"
               className="mt-10 inline-flex items-center gap-2 border border-copper/30 px-8 py-3.5 font-body text-[11px] font-normal tracking-[3px] uppercase text-copper transition-all hover:border-copper hover:bg-copper/10"
             >
-              Design This Adventure
+              Read the Story
               <span className="text-sm">&rarr;</span>
             </Link>
           </FadeIn>

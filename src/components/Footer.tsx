@@ -6,7 +6,6 @@ const footerLinks = [
   { href: "/destinations", label: "Destinations" },
   { href: "/impact", label: "Impact" },
   { href: "/journal", label: "Journal" },
-  { href: "/design", label: "Design My Adventure" },
 ];
 
 export function Footer() {

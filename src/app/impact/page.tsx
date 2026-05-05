@@ -157,10 +157,10 @@ export default function ImpactPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <Link
-              href="/design"
+              href="/story"
               className="mt-10 inline-flex items-center gap-2 border border-copper/30 px-8 py-3.5 font-body text-[11px] font-normal tracking-[3px] uppercase text-copper transition-all hover:border-copper hover:bg-copper/10"
             >
-              Design My Adventure
+              Read the Story
               <span className="text-sm">&rarr;</span>
             </Link>
           </FadeIn>
