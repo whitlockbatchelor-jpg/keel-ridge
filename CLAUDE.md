@@ -4,7 +4,7 @@
 Keelridge (keelridge.co) is a private expedition collective founded by Whit Batchelor. It is NOT a business or tour operator — it is a curated community of serious adventurers with the means, skill, and desire to pursue international backcountry ski and expedition travel. Whit participates in every trip as curator and fellow adventurer.
 
 ## The Audience
-Sophisticated, financially independent adults (think Whittier Trust clientele) who are frustrated they cannot find the right travel partners. They show up solo to lodges in Alaska or Japan, build great camaraderie, then scatter. Keelridge solves that. This is NOT a beginner or casual hiking audience.
+Sophisticated, financially independent adults (think Whittier Trust clientele) who are frustrated they cannot find the right travel partners. They show up solo to lodges in Alaska or Japan, build great camaraderie, then scatter. Keelridge solves that. This is NOT a beginner or casual hiking audience. Whit's day job in the family office world serves this same customer — that overlap is intentional and now reflected on the Story page.
 
 ## Brand Voice
 - Editorial, literary, understated
@@ -70,7 +70,6 @@ public/ — Static assets and images
 - Not a tour operator
 - Not a business seeking revenue
 - Not for beginners or casual travelers
-- Not connected to Whits professional life in wealth management
 - Not trying to grow to scale — small, curated, intentional
 
 ## Tone Guardrails
