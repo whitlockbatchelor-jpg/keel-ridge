@@ -66,14 +66,17 @@ export default function StoryPage() {
                 Olympic dinghy sailing, which is a sport that will humble you
                 efficiently and without apology. Then professional big-boat
                 racing — the Caribbean, Europe, Hong Kong to mainland China. An
-                MBA. Fifteen years in wealth management. A life I&apos;m
-                genuinely proud of, and a pull toward the mountains and the sea
-                that never quieted regardless of what else I was doing.
+                MBA. Fifteen years now in the family office world,
+                working with families who think in generations — the same
+                families this work is built for. A life I&apos;m genuinely
+                proud of, and a pull toward the mountains and the sea that
+                never quieted regardless of what else I was doing.
               </p>
               <p>
-                I&apos;m in my mid-forties now. I pay attention to things I
-                didn&apos;t used to pay attention to. My body. Time. The rate
-                at which certain things are disappearing.
+                I&apos;m in my mid-forties now. A daughter and two sons —
+                thirteen, eleven, six. I pay attention to things I
+                didn&apos;t used to pay attention to. My body. Time. The
+                rate at which certain things are disappearing.
               </p>
               <p>
                 Glaciers are retreating. I&apos;ve seen this. Villages that
@@ -196,9 +199,10 @@ export default function StoryPage() {
               { year: "UVM", text: "Forestry, sustainability, and the seed of a philosophy" },
               { year: "San Diego", text: "Olympic-level sailing and coaching dinghys" },
               { year: "The World", text: "Professional racing — Caribbean, Europe, Asia" },
-              { year: "Wall Street", text: "MBA, wealth management, fifteen years of discipline" },
+              { year: "Family Office", text: "MBA, fifteen years serving families thinking in generations" },
               { year: "Backcountry", text: "Alaska, Japan, New Zealand, the Alps — building the trips" },
-              { year: "Keel Ridge", text: "Opening those trips to others. Bespoke adventure, from the ground up." },
+              { year: "Keel Ridge", text: "Curated trips for the people whose friends stopped saying yes." },
+              { year: "Today", text: "Running both — the office and the trips. The families are the same." },
             ].map((item, i) => (
               <FadeIn key={item.year} delay={i * 0.08}>
                 <div className="flex gap-8 items-baseline">

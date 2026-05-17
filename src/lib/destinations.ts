@@ -44,11 +44,11 @@ export const destinations: Destination[] = [
     slug: "european-alps",
     name: "European Alps",
     region: "South Tyrol",
-    theme: "Hut to hut through South Tyrol — six days, four strangers, weather that decides the day",
+    theme: "Hut to hut through South Tyrol — six days, four travelers, weather that decides the day",
     gradient: "from-slate via-[#1B2A4A] to-ink",
     image: "/images/destinations/european-alps-v2.jpg",
     description: [
-      "Hut to hut through South Tyrol. Six days, four strangers, one mountain we didn't summit and were right not to. The rifugios are run by families who've been here for generations. The breakfast is terrible. Everything else is not.",
+      "Hut to hut through South Tyrol. Six days, four travelers, one mountain we didn't summit and were right not to. The rifugios are run by families who've been here for generations. The breakfast is terrible. Everything else is not.",
     ],
     guideIntro:
       "South Tyrol guides who have skied these huts since they were children. They set the pace and read the weather. We follow.",

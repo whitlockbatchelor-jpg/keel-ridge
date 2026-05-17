@@ -21,7 +21,7 @@ const featuredDestinations = [
     image: "/images/destinations/european-alps-v2.jpg",
     linkable: true,
     description:
-      "Hut to hut through South Tyrol. Six days, four strangers, one mountain we didn't summit and were right not to. The rifugios are run by families who've been here for generations. The breakfast is terrible. Everything else is not.",
+      "Hut to hut through South Tyrol. Six days, four travelers, one mountain we didn't summit and were right not to. The rifugios are run by families who've been here for generations. The breakfast is terrible. Everything else is not.",
   },
   {
     slug: "new-zealand",
@@ -77,7 +77,7 @@ export default function HomePage() {
       <section className="relative flex min-h-screen items-center overflow-hidden py-32">
         <Image
           src="/images/hero/homepage-hero.jpg"
-          alt="Keel Ridge — bespoke adventure travel"
+          alt="Keel Ridge — curated adventure travel"
           fill
           priority
           className="object-cover"
@@ -110,7 +110,7 @@ export default function HomePage() {
                 the means and the fitness and the appetite for serious terrain
                 — and who keep showing up to lodges alone because their
                 friends stopped saying yes. This is not a travel company.
-                There are no packages here, no curated itineraries. There is a
+                There are no packages here, no fixed itineraries. There is a
                 small group of people who go to difficult places together,
                 guided by locals who have spent lifetimes there, in terrain
                 that does not appear in any catalog.
